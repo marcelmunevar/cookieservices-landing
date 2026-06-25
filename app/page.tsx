@@ -1,3 +1,5 @@
+import PackagesPricing from "./components/packages-pricing";
+
 export default function Home() {
   return (
     <main className="landing">
@@ -11,6 +13,7 @@ export default function Home() {
         <nav className="topnav" aria-label="Primary">
           <a href="#services">Scope</a>
           <a href="#packages">Packages</a>
+          <a href="#process">Process</a>
           <a href="#faq">FAQ</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -63,7 +66,7 @@ export default function Home() {
           <article className="card">
             <h3>Tracking Technology Identification</h3>
             <p>We identify and analyze:</p>
-            <ul>
+            <ul className="check-list">
               <li>Google Analytics (GA4)</li>
               <li>Google Tag Manager</li>
               <li>Meta Pixel</li>
@@ -78,7 +81,7 @@ export default function Home() {
           <article className="card">
             <h3>Consent Testing</h3>
             <p>We test how your website behaves when visitors:</p>
-            <ul>
+            <ul className="check-list">
               <li>Take no action</li>
               <li>Accept all cookies</li>
               <li>Reject all cookies</li>
@@ -88,7 +91,7 @@ export default function Home() {
           <article className="card">
             <h3>Cookie & Storage Analysis</h3>
             <p>We review:</p>
-            <ul>
+            <ul className="check-list">
               <li>Browser cookies</li>
               <li>Local Storage</li>
               <li>Session Storage</li>
@@ -107,7 +110,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section container section-divider" id="packages">
+      <section className="section container section-divider" id="issues">
         <h2>Common Issues We Find</h2>
         <ul className="check-list">
           <li>Analytics firing before consent</li>
@@ -121,7 +124,7 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="section container section-divider" id="faq">
+      <section className="section container section-divider" id="process">
         <h2>How Our Audit Works</h2>
         <div className="grid">
           <article className="card">
@@ -162,7 +165,7 @@ export default function Home() {
           issues. We focus on what your visitors actually experience, not just
           what an automated scanner reports.
         </p>
-        <ul>
+        <ul className="check-list">
           <li>Real browser behavior</li>
           <li>Consent enforcement</li>
           <li>Tracking requests</li>
@@ -171,79 +174,9 @@ export default function Home() {
         </ul>
       </section>
 
-      <section className="section container section-divider">
-        <h2>Audit Packages</h2>
-        <div className="stack">
-          <article className="card">
-            <h3>Homepage Audit</h3>
-            <p>
-              A focused review of your website&apos;s homepage and consent
-              implementation.
-            </p>
-            <p>Includes:</p>
-            <ul>
-              <li>Homepage review</li>
-              <li>Cookie banner validation</li>
-              <li>Tracking technology identification</li>
-              <li>Consent testing</li>
-              <li>Summary of findings</li>
-            </ul>
-            <p>Best for:</p>
-            <ul>
-              <li>Small businesses</li>
-              <li>Initial assessments</li>
-              <li>Quick risk reviews</li>
-            </ul>
-          </article>
+      <PackagesPricing />
 
-          <article className="card">
-            <h3>Website Audit</h3>
-            <p>
-              A broader review of your website&apos;s most important pages and
-              user journeys.
-            </p>
-            <p>Includes:</p>
-            <ul>
-              <li>Review of up to 5 key pages or templates</li>
-              <li>Homepage</li>
-              <li>Service or product page</li>
-              <li>Contact page</li>
-              <li>Blog or article page</li>
-              <li>Additional page selected based on your website</li>
-            </ul>
-            <p>Deliverables:</p>
-            <ul>
-              <li>Executive summary</li>
-              <li>Detailed findings report</li>
-              <li>Supporting evidence</li>
-              <li>Recommended remediation steps</li>
-            </ul>
-            <p>Best for:</p>
-            <ul>
-              <li>Marketing websites</li>
-              <li>Lead generation websites</li>
-              <li>Organizations seeking a more complete assessment</li>
-            </ul>
-          </article>
-
-          <article className="card">
-            <h3>Custom Audit</h3>
-            <p>For larger websites and more complex environments.</p>
-            <p>Examples include:</p>
-            <ul>
-              <li>E-commerce websites</li>
-              <li>Multi-brand organizations</li>
-              <li>Multiple domains or subdomains</li>
-              <li>Conversion funnels</li>
-              <li>Logged-in experiences</li>
-              <li>Advanced tag management implementations</li>
-            </ul>
-            <p>Contact us for a custom quote.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="section container section-divider">
+      <section className="section container section-divider" id="faq">
         <h2>What You&apos;ll Receive</h2>
         <div className="grid">
           <article className="card">
@@ -308,6 +241,8 @@ export default function Home() {
         </p>
 
         <form className="form" action="#" method="post">
+          <input id="selected-package" name="selectedPackage" type="hidden" />
+
           <label htmlFor="name">Name</label>
           <input id="name" name="name" type="text" autoComplete="name" />
 
@@ -344,7 +279,10 @@ export default function Home() {
       </section>
 
       <footer className="container footer">
-        <p>Technical reviews and findings only. No legal advice is provided.</p>
+        <p>
+          © {new Date().getFullYear()} Independent Compliance Studio. All rights
+          reserved.
+        </p>
       </footer>
     </main>
   );
