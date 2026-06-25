@@ -1,4 +1,5 @@
 import PackagesPricing from "./components/packages-pricing";
+import ContactStatus from "./components/contact-status";
 
 export default function Home() {
   return (
@@ -114,7 +115,7 @@ export default function Home() {
         <h2>Common Issues We Find</h2>
         <ul className="check-list">
           <li>Analytics firing before consent</li>
-          <li>Marketing pixels loading despite "Reject All"</li>
+          <li>Marketing pixels loading despite &quot;Reject All&quot;</li>
           <li>Google Tag Manager misconfigurations</li>
           <li>Consent Mode implementation issues</li>
           <li>Legacy tracking scripts still active</li>
@@ -240,11 +241,19 @@ export default function Home() {
           steps.
         </p>
 
-        <form className="form" action="#" method="post">
+        <ContactStatus />
+
+        <form className="form" action="/api/contact" method="post">
           <input id="selected-package" name="selectedPackage" type="hidden" />
 
           <label htmlFor="name">Name</label>
-          <input id="name" name="name" type="text" autoComplete="name" />
+          <input
+            id="name"
+            name="name"
+            type="text"
+            autoComplete="name"
+            required
+          />
 
           <label htmlFor="company">Company</label>
           <input
@@ -263,10 +272,16 @@ export default function Home() {
           />
 
           <label htmlFor="email">Email Address</label>
-          <input id="email" name="email" type="email" autoComplete="email" />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            required
+          />
 
           <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" rows={5} />
+          <textarea id="message" name="message" rows={5} required />
 
           <button className="button button-primary" type="submit">
             Request Audit
