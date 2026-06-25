@@ -1,65 +1,351 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <main className="landing">
+      <div className="ambient ambient-one" aria-hidden="true" />
+      <div className="ambient ambient-two" aria-hidden="true" />
+
+      <header className="topbar container">
+        <a className="brand" href="#top">
+          Cookie Services
+        </a>
+        <nav className="topnav" aria-label="Primary">
+          <a href="#services">Scope</a>
+          <a href="#packages">Packages</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
+
+      <section id="top" className="hero section container">
+        <div className="hero-panel">
+          <p className="eyebrow">Website Tracking & Cookie Compliance Audit</p>
+          <h1>
+            Discover Tracking Issues Before They Become Expensive Problems
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="lead">
+            Many organizations install a cookie banner and assume their website
+            is compliant. Unfortunately, analytics, advertising pixels, and
+            tracking technologies often continue collecting data before consent
+            is given. A cookie banner alone does not guarantee compliance.
           </p>
+          <p className="lead">
+            Our audits identify tracking technologies, test consent behavior,
+            and document how your website actually behaves in a real browser.
+          </p>
+          <div className="cta-group">
+            <a className="button button-primary" href="#contact">
+              Request an Audit
+            </a>
+            <a className="button button-secondary" href="#services">
+              See What We Review
+            </a>
+          </div>
+
+          <ul className="hero-highlights" aria-label="Audit highlights">
+            <li>Manual testing in a real browser</li>
+            <li>Evidence-backed findings</li>
+            <li>Clear remediation guidance</li>
+          </ul>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section id="services" className="section container section-divider">
+        <h2>What We Review</h2>
+        <div className="stack">
+          <article className="card">
+            <h3>Cookie Banner Validation</h3>
+            <p>
+              We verify whether your consent banner actually controls tracking
+              technologies or simply displays a notice.
+            </p>
+          </article>
+
+          <article className="card">
+            <h3>Tracking Technology Identification</h3>
+            <p>We identify and analyze:</p>
+            <ul>
+              <li>Google Analytics (GA4)</li>
+              <li>Google Tag Manager</li>
+              <li>Meta Pixel</li>
+              <li>LinkedIn Insight Tag</li>
+              <li>Microsoft Clarity</li>
+              <li>Hotjar</li>
+              <li>TikTok Pixel</li>
+              <li>Other advertising and analytics technologies</li>
+            </ul>
+          </article>
+
+          <article className="card">
+            <h3>Consent Testing</h3>
+            <p>We test how your website behaves when visitors:</p>
+            <ul>
+              <li>Take no action</li>
+              <li>Accept all cookies</li>
+              <li>Reject all cookies</li>
+            </ul>
+          </article>
+
+          <article className="card">
+            <h3>Cookie & Storage Analysis</h3>
+            <p>We review:</p>
+            <ul>
+              <li>Browser cookies</li>
+              <li>Local Storage</li>
+              <li>Session Storage</li>
+              <li>Third-party scripts</li>
+              <li>Tracking identifiers</li>
+            </ul>
+          </article>
+
+          <article className="card">
+            <h3>Documentation Review</h3>
+            <p>
+              We compare observed tracking technologies against your privacy and
+              cookie disclosures.
+            </p>
+          </article>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="section container section-divider" id="packages">
+        <h2>Common Issues We Find</h2>
+        <ul className="check-list">
+          <li>Analytics firing before consent</li>
+          <li>Marketing pixels loading despite "Reject All"</li>
+          <li>Google Tag Manager misconfigurations</li>
+          <li>Consent Mode implementation issues</li>
+          <li>Legacy tracking scripts still active</li>
+          <li>Missing cookie disclosures</li>
+          <li>Tracking technologies omitted from privacy documentation</li>
+          <li>Cookie banners that do not properly enforce user choices</li>
+        </ul>
+      </section>
+
+      <section className="section container section-divider" id="faq">
+        <h2>How Our Audit Works</h2>
+        <div className="grid">
+          <article className="card">
+            <h3>Step 1 - Website Review</h3>
+            <p>
+              We manually review your website using browser-based testing and
+              network analysis tools.
+            </p>
+          </article>
+          <article className="card">
+            <h3>Step 2 - Consent Verification</h3>
+            <p>
+              We test multiple consent scenarios to determine what technologies
+              load before and after user consent.
+            </p>
+          </article>
+          <article className="card">
+            <h3>Step 3 - Evidence Collection</h3>
+            <p>
+              We document findings with screenshots, network requests, and
+              technical evidence.
+            </p>
+          </article>
+          <article className="card">
+            <h3>Step 4 - Findings Report</h3>
+            <p>
+              You receive a report outlining observations, potential risks, and
+              recommended remediation steps.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section container section-divider">
+        <h2>Why Choose a Manual Audit?</h2>
+        <p className="lead">
+          Many scanning tools generate false positives or miss implementation
+          issues. We focus on what your visitors actually experience, not just
+          what an automated scanner reports.
+        </p>
+        <ul>
+          <li>Real browser behavior</li>
+          <li>Consent enforcement</li>
+          <li>Tracking requests</li>
+          <li>Cookie creation</li>
+          <li>User experience</li>
+        </ul>
+      </section>
+
+      <section className="section container section-divider">
+        <h2>Audit Packages</h2>
+        <div className="stack">
+          <article className="card">
+            <h3>Homepage Audit</h3>
+            <p>
+              A focused review of your website&apos;s homepage and consent
+              implementation.
+            </p>
+            <p>Includes:</p>
+            <ul>
+              <li>Homepage review</li>
+              <li>Cookie banner validation</li>
+              <li>Tracking technology identification</li>
+              <li>Consent testing</li>
+              <li>Summary of findings</li>
+            </ul>
+            <p>Best for:</p>
+            <ul>
+              <li>Small businesses</li>
+              <li>Initial assessments</li>
+              <li>Quick risk reviews</li>
+            </ul>
+          </article>
+
+          <article className="card">
+            <h3>Website Audit</h3>
+            <p>
+              A broader review of your website&apos;s most important pages and
+              user journeys.
+            </p>
+            <p>Includes:</p>
+            <ul>
+              <li>Review of up to 5 key pages or templates</li>
+              <li>Homepage</li>
+              <li>Service or product page</li>
+              <li>Contact page</li>
+              <li>Blog or article page</li>
+              <li>Additional page selected based on your website</li>
+            </ul>
+            <p>Deliverables:</p>
+            <ul>
+              <li>Executive summary</li>
+              <li>Detailed findings report</li>
+              <li>Supporting evidence</li>
+              <li>Recommended remediation steps</li>
+            </ul>
+            <p>Best for:</p>
+            <ul>
+              <li>Marketing websites</li>
+              <li>Lead generation websites</li>
+              <li>Organizations seeking a more complete assessment</li>
+            </ul>
+          </article>
+
+          <article className="card">
+            <h3>Custom Audit</h3>
+            <p>For larger websites and more complex environments.</p>
+            <p>Examples include:</p>
+            <ul>
+              <li>E-commerce websites</li>
+              <li>Multi-brand organizations</li>
+              <li>Multiple domains or subdomains</li>
+              <li>Conversion funnels</li>
+              <li>Logged-in experiences</li>
+              <li>Advanced tag management implementations</li>
+            </ul>
+            <p>Contact us for a custom quote.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section container section-divider">
+        <h2>What You&apos;ll Receive</h2>
+        <div className="grid">
+          <article className="card">
+            <h3>Executive Summary</h3>
+            <p>A high-level overview of findings and priorities.</p>
+          </article>
+          <article className="card">
+            <h3>Technical Findings Report</h3>
+            <p>Detailed documentation including:</p>
+            <ul>
+              <li>Technologies identified</li>
+              <li>Cookies observed</li>
+              <li>Tracking requests captured</li>
+              <li>Screenshots</li>
+              <li>Reproduction steps</li>
+              <li>Recommendations</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section className="section container section-divider">
+        <h2>Frequently Asked Questions</h2>
+        <div className="stack">
+          <article className="card">
+            <h3>Is this legal advice?</h3>
+            <p>
+              No. Our audits provide technical findings related to website
+              tracking and consent behavior. We do not provide legal advice.
+            </p>
+          </article>
+          <article className="card">
+            <h3>Do you fix issues you discover?</h3>
+            <p>
+              Yes. Remediation assistance can be provided separately if
+              requested.
+            </p>
+          </article>
+          <article className="card">
+            <h3>How long does an audit take?</h3>
+            <p>
+              Most audits are completed within a few business days, depending on
+              scope.
+            </p>
+          </article>
+          <article className="card">
+            <h3>Will you need access to our website?</h3>
+            <p>
+              Most audits can be performed without website access. Additional
+              access may be requested for remediation services.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section container section-divider" id="contact">
+        <h2>Request Your Audit</h2>
+        <p className="lead">
+          Want to understand how your website handles tracking and consent?
+          Complete the form below and we&apos;ll contact you regarding next
+          steps.
+        </p>
+
+        <form className="form" action="#" method="post">
+          <label htmlFor="name">Name</label>
+          <input id="name" name="name" type="text" autoComplete="name" />
+
+          <label htmlFor="company">Company</label>
+          <input
+            id="company"
+            name="company"
+            type="text"
+            autoComplete="organization"
+          />
+
+          <label htmlFor="website">Website URL</label>
+          <input
+            id="website"
+            name="website"
+            type="url"
+            placeholder="https://"
+          />
+
+          <label htmlFor="email">Email Address</label>
+          <input id="email" name="email" type="email" autoComplete="email" />
+
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" rows={5} />
+
+          <button className="button button-primary" type="submit">
+            Request Audit
+          </button>
+        </form>
+
+        <p className="disclaimer">
+          Technical reviews and findings only. No legal advice is provided.
+        </p>
+      </section>
+
+      <footer className="container footer">
+        <p>Technical reviews and findings only. No legal advice is provided.</p>
+      </footer>
+    </main>
   );
 }
