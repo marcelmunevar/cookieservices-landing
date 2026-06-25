@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import PackagesPricing from "./components/packages-pricing";
 import ContactStatus from "./components/contact-status";
 
@@ -241,7 +242,9 @@ export default function Home() {
           steps.
         </p>
 
-        <ContactStatus />
+        <Suspense>
+          <ContactStatus />
+        </Suspense>
 
         <form className="form" action="/api/contact" method="post">
           <input id="selected-package" name="selectedPackage" type="hidden" />
